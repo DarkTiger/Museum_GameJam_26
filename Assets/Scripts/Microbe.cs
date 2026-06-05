@@ -36,6 +36,8 @@ public class Microbe : MonoBehaviour
 
     protected void OnCollisionEnter2D(Collision2D collision)
     {
+        if (!(collision.collider is CircleCollider2D)) return;
+
         if (collision.gameObject.TryGetComponent(out Microbe microbe))
         {
             if (microbe.transform.localScale.magnitude < transform.localScale.magnitude)
