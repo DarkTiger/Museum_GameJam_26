@@ -460,10 +460,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92b25e28f206ff46b404e2db186af4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameMaker
-  enemiesCount: 2500
-  scaleMinMax: {x: 0.2, y: 1}
+  enemiesCount: 10
+  scaleMinMax: {x: 0.2, y: 0.75}
   enemyMicrobes:
   - {fileID: 3075845360874471351, guid: 3411a12103feaab49a67f071fef44f58, type: 3}
+  - {fileID: 3075845360874471351, guid: bf43a7a574512414daa9fcebcc0d077b, type: 3}
+  - {fileID: 3075845360874471351, guid: 68aaa894cf3ce53409f0d339e32babff, type: 3}
+  - {fileID: 3075845360874471351, guid: 8380bb13f9a431a46a232580052f58cd, type: 3}
 --- !u!4 &2128198236
 Transform:
   m_ObjectHideFlags: 0

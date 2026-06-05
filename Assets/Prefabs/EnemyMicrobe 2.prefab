@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1645166912212683787}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.021, y: -0.411, z: 0}
+  m_LocalPosition: {x: -0.021, y: -0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -81,12 +81,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: d76a5166c9ebc4342b0d98804cb1618d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c80ed40591bba6845b9abcabb94bbab7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.584, y: 3.076}
+  m_Size: {x: 2.1, y: 2.408}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -103,10 +103,10 @@ GameObject:
   - component: {fileID: 3075845360874471351}
   - component: {fileID: 6575809828701408578}
   - component: {fileID: 9164707256603290265}
-  - component: {fileID: 3506775158143309717}
-  - component: {fileID: 5329658250495502326}
+  - component: {fileID: 4915975213966876981}
+  - component: {fileID: 5011295133123307869}
   m_Layer: 0
-  m_Name: EnemyMicrobe 1
+  m_Name: EnemyMicrobe 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -204,10 +204,10 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.1}
-  m_Size: {x: 0.96, y: 1.86}
+  m_Offset: {x: 0, y: 0.07}
+  m_Size: {x: 1.21, y: 1.71}
   m_Direction: 0
---- !u!58 &3506775158143309717
+--- !u!58 &4915975213966876981
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,9 +241,9 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 1.67}
-  m_Radius: 1.53
---- !u!58 &5329658250495502326
+  m_Offset: {x: 0, y: 1.5}
+  m_Radius: 1.32
+--- !u!58 &5011295133123307869
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -277,5 +277,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.96}
-  m_Radius: 0.24
+  m_Offset: {x: 0, y: 0.87}
+  m_Radius: 0.26
