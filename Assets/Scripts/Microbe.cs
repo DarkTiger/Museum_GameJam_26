@@ -8,10 +8,19 @@ public class Microbe : MonoBehaviour
     public float GrowMultiplier = 0.1f;
     protected SpriteRenderer SpriteRenderer;
     protected List<Microbe> MicrobesList = new List<Microbe>();
+    float targetScale = 0f;
 
     private void Awake()
     {
         SpriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        if (targetScale > 0f && transform.localScale.x != targetScale)
+        {
+            transform.localScale = new Vector3(targetScale, targetScale, targetScale);//Vector3.Lerp(transform.localScale, new Vector3(targetScale, targetScale, targetScale), 500f * Time.deltaTime);
+        }
     }
 
     protected void OnTriggerEnter2D(Collider2D collision)
@@ -31,8 +40,9 @@ public class Microbe : MonoBehaviour
         {
             if (microbe.transform.localScale.magnitude < transform.localScale.magnitude)
             {
-                transform.localScale += microbe.transform.localScale * GrowMultiplier;
+                targetScale = transform.localScale.x + (microbe.transform.localScale.x * GrowMultiplier);
                 MicrobesList.Remove(microbe);
+                GameManager.Instance.EnemyDestroyed(microbe);
                 Destroy(microbe.gameObject);
             }
         }
