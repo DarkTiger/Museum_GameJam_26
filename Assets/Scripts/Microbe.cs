@@ -15,11 +15,11 @@ public class Microbe : MonoBehaviour
         SpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
+    protected void Update()
     {
         if (targetScale > 0f && transform.localScale.x != targetScale)
         {
-            transform.localScale = new Vector3(targetScale, targetScale, targetScale);//Vector3.Lerp(transform.localScale, new Vector3(targetScale, targetScale, targetScale), 500f * Time.deltaTime);
+            transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(targetScale, targetScale, targetScale), 5f * Time.deltaTime);
         }
     }
 

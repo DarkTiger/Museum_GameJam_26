@@ -12,8 +12,10 @@ public class EnemyMicrobe : Microbe
     Vector3 position3D;
 
 
-    void Update()
+    protected void Update()
     {
+        base.Update();
+
         Move();
         Vector3 direction = (nextPosition - transform.position).normalized;
         transform.up = Vector3.Slerp(transform.up, direction, RotationSpeed*Time.deltaTime);

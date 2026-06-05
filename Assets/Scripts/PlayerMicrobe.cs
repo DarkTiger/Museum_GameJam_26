@@ -7,8 +7,10 @@ public class PlayerMicrobe : Microbe
     int borderOffset = 24;
 
 
-    void Update()
+    protected void Update()
     {
+        base.Update();
+
         if (Mouse.current.leftButton.isPressed)
         {
             Vector3 mousePos = Mouse.current.position.ReadValue();
