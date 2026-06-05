@@ -3,8 +3,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerMicrobe : Microbe
 {
-    [SerializeField] float speed = 1f;
-
     Vector3 targetPosition = Vector3.zero;
     int borderOffset = 24;
 
@@ -23,7 +21,7 @@ public class PlayerMicrobe : Microbe
             if (targetPosition != Vector3.zero &&
             new Vector3(transform.position.x, transform.position.y, 0f) != targetPosition)
             {
-                transform.position -= (new Vector3(transform.position.x, transform.position.y, 0f) - new Vector3(targetPosition.x, targetPosition.y, 0f)).normalized * speed * Time.deltaTime;
+                transform.position -= (new Vector3(transform.position.x, transform.position.y, 0f) - new Vector3(targetPosition.x, targetPosition.y, 0f)).normalized * Speed * Time.deltaTime;
             }
         }
     }

@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class Microbe : MonoBehaviour
 {
-    protected float Speed = 1;
-    protected float RotationSpeed = 1;
+    public float Speed = 1;
+    public float RotationSpeed = 1;
+    public float GrowMultiplier = 0.1f;
     protected SpriteRenderer SpriteRenderer;
     protected List<Microbe> MicrobesList = new List<Microbe>();
 
@@ -30,6 +31,7 @@ public class Microbe : MonoBehaviour
         {
             if (microbe.transform.localScale.magnitude < transform.localScale.magnitude)
             {
+                transform.localScale += microbe.transform.localScale * GrowMultiplier;
                 MicrobesList.Remove(microbe);
                 Destroy(microbe.gameObject);
             }
