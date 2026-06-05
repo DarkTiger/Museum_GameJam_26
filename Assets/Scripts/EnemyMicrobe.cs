@@ -3,33 +3,25 @@ using UnityEngine;
 public class EnemyMicrobe : Microbe
 {
     Microbe target = null;
+    Vector3 nextPosition = Vector3.zero;
 
 
-    void SearchTarget()
-    {
-        Microbe[] microbes = GameMaker.Instance.Microbes;
-
-        for (int i = 0; i < microbes.Length; i++)
-        {
-            Microbe microbe = microbes[i];
-            if (microbe != this)
-            {
-                if (microbe.transform.localScale.magnitude < (transform.localScale.magnitude * 0.9f))
-                {
-
-                }
-            }
-        }
-    }
 
     void Update()
     {
-        if (!target)
-        {
-            SearchTarget();
-        }
+        Move();
+    }
 
-        if (target)
+    private void Move()
+    {
+        if (nextPosition != Vector3.zero && transform.position != nextPosition)
+        {
+            transform.position += (transform.position - nextPosition).normalized * Speed * Time.deltaTime;
+        }
+        else
+        {
+            nextPosition = new Vector3(Random.Range(-Screen.width, Screen.width), Random.Range(-Screen.height, Screen.height), 0f);
+        }
     }
 
 

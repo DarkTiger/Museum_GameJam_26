@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class GameMaker : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static GameMaker Instance {  get; private set; }
+    public static GameManager Instance {  get; private set; }
     public Microbe[] Microbes { get; private set; }
 
 
