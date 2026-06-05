@@ -6,7 +6,7 @@ public class Microbe : MonoBehaviour
     protected float Speed = 1;
     protected float RotationSpeed = 1;
     protected SpriteRenderer SpriteRenderer;
-    protected List<Microbe> MicrobesList;
+    protected List<Microbe> MicrobesList = new List<Microbe>();
 
     private void Awake()
     {
@@ -20,6 +20,18 @@ public class Microbe : MonoBehaviour
             if (!MicrobesList.Contains(microbe))
             {
                 MicrobesList.Add(microbe);
+            }
+        }
+    }
+
+    protected void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out Microbe microbe))
+        {
+            if (microbe.transform.localScale.magnitude < transform.localScale.magnitude)
+            {
+                MicrobesList.Remove(microbe);
+                Destroy(microbe.gameObject);
             }
         }
     }
