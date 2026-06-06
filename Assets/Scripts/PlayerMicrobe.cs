@@ -27,4 +27,9 @@ public class PlayerMicrobe : Microbe
             }
         }
     }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.PlayerDead();
+    }
 }

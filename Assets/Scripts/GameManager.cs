@@ -1,12 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] int enemiesCount = 50;
     [SerializeField] Vector2 scaleMinMax = new Vector2(0.1f, 1.5f);
     [SerializeField] EnemyMicrobe[] enemyMicrobes;
-
+    [SerializeField] GameObject gameOverObject;
     public static GameManager Instance {  get; private set; }
     public List<Microbe> MicrobesList { get; private set; }
 
@@ -21,6 +23,14 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         SpawnObjects();
+
+        if (gameOverObject.activeSelf)
+        {
+            if (Mouse.current.leftButton.wasPressedThisFrame)
+            {
+                SceneManager.LoadScene("Game");
+            }
+        }
     }
 
     void SpawnObjects()
@@ -44,5 +54,10 @@ public class GameManager : MonoBehaviour
     public void EnemyDestroyed(Microbe microbe)
     {
         MicrobesList.Remove(microbe);
+    }
+
+    public void PlayerDead()
+    {
+        gameOverObject.SetActive(true);
     }
 }
