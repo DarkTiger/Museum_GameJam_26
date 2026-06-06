@@ -14,17 +14,35 @@ public class SceneManagementGame : MonoBehaviour
 
     private void Start()
     {
-        LoadGameLevel();
+        if (SceneManager.GetActiveScene().name == "Intro")
+        {
+            LoadCreditsLevel();
+        }
+        else
+        {
+            LoadGameLevel();
+        }
     }
 
-public void LoadGameLevel()
+    public void LoadGameLevel()
     {
         StartCoroutine(LoadGameLevelCO());
     }
 
     IEnumerator LoadGameLevelCO()
     {
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(10f);
         SceneManager.LoadScene("Game");
+    }
+
+    public void LoadCreditsLevel()
+    {
+        StartCoroutine(LoadCreditsLevelCO());
+    }
+
+    IEnumerator LoadCreditsLevelCO()
+    {
+        yield return new WaitForSeconds(15f);
+        SceneManager.LoadScene("Credits");
     }
 }
