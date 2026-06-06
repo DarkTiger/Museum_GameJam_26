@@ -52,9 +52,10 @@ public class EnemyMicrobe : Microbe
             {
                 direction = (transform.position - bigTarget.transform.position).normalized;
                 transform.position += (transform.position - bigTarget.transform.position).normalized * (Speed / transform.localScale.x) * Time.deltaTime;
-                if (Vector3.Distance(transform.position, bigTarget.transform.position) > 2.5f)
+                if (Vector3.Distance(transform.position, bigTarget.transform.position) > 4f)
                 {
                     bigTarget = null;
+                    FindNextPosition();
                 }
             }
         }
