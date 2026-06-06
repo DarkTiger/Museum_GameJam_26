@@ -9,9 +9,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] Vector2 scaleMinMax = new Vector2(0.1f, 1.5f);
     [SerializeField] EnemyMicrobe[] enemyMicrobes;
     [SerializeField] GameObject gameOverObject;
+    [SerializeField] GameObject winObject;
+    [SerializeField] int maxGoal = 20;
+
     public static GameManager Instance {  get; private set; }
     public List<Microbe> MicrobesList { get; private set; }
 
+    int currentGoal = 0;
 
 
     private void Awake()
@@ -26,7 +30,7 @@ public class GameManager : MonoBehaviour
     {
         SpawnObjects();
 
-        if (gameOverObject.activeSelf)
+        if (gameOverObject.activeSelf || winObject.activeSelf)
         {
             if (Mouse.current.leftButton.wasPressedThisFrame || (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame))
             {
@@ -64,5 +68,20 @@ public class GameManager : MonoBehaviour
         {
             gameOverObject.SetActive(true);
         }  
+    }
+
+    public void AddGoal()
+    {
+        Debug.Log("ADD GOAL");
+        currentGoal++;
+
+        Debug.Log(currentGoal + "    " + maxGoal);
+
+        CanvasMenu.Instance.UpdateGoal(currentGoal, maxGoal);
+
+        if (currentGoal >= maxGoal)
+        {
+            winObject.SetActive(true);
+        }
     }
 }

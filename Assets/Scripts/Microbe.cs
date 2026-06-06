@@ -42,6 +42,11 @@ public class Microbe : MonoBehaviour
         {
             if (microbe.transform.localScale.magnitude < transform.localScale.magnitude)
             {
+                if (this is PlayerMicrobe)
+                {
+                    GameManager.Instance.AddGoal();
+                }
+
                 targetScale = transform.localScale.x + (microbe.transform.localScale.x * GrowMultiplier);
                 MicrobesList.Remove(microbe);
                 GameManager.Instance.EnemyDestroyed(microbe);

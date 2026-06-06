@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4ede4e20f152f4fb99a07768b24023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMicrobe
-  Speed: 0.75
+  Speed: 0.35
   RotationSpeed: 10
   GrowMultiplier: 0.1
 --- !u!50 &6575809828701408578

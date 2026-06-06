@@ -1,13 +1,23 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CanvasMenu : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI txtFps;
+    [SerializeField] Image imgFillBar;
+
+    public static CanvasMenu Instance { get; private set; }
 
     private int frameCount = 0;
     private float timeElapsed = 0f;
     private float currentFPS = 0f;
+
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Update()
     {
@@ -26,5 +36,10 @@ public class CanvasMenu : MonoBehaviour
             frameCount = 0;
             timeElapsed = 0f;
         }
+    }
+
+    public void UpdateGoal(float current, float max)
+    {
+        imgFillBar.fillAmount = current / max;
     }
 }
