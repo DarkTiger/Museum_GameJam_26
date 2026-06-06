@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac54b877532124844b01b923b2e4877c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMicrobe
-  Speed: 1
+  Speed: 3
   RotationSpeed: 1
   GrowMultiplier: 0.1
 --- !u!58 &4691483364022506110

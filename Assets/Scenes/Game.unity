@@ -582,6 +582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2074998223}
   - component: {fileID: 2074998222}
+  - component: {fileID: 2074998224}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -638,7 +639,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 3c970bd4e63fa1c4ca0711556594d748, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 127f2f85f94b26e4a947ae1a7764e9ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -663,6 +664,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2074998224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074998221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df0c701c8272774f9df1c066c99f11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Background
+  cloudsCount: 5
+  cloudPrefab: {fileID: 8205295508800810158, guid: 87dfa0ff1634c784d86aa6a3088dd2c6, type: 3}
+  CloudsList: []
 --- !u!1 &2128198234
 GameObject:
   m_ObjectHideFlags: 0
