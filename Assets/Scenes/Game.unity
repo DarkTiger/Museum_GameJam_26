@@ -709,7 +709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameMaker
   enemiesCount: 10
-  scaleMinMax: {x: 0.2, y: 0.75}
+  scaleMinMax: {x: 0.1, y: 0.5}
   enemyMicrobes:
   - {fileID: 3075845360874471351, guid: 3411a12103feaab49a67f071fef44f58, type: 3}
   - {fileID: 3075845360874471351, guid: bf43a7a574512414daa9fcebcc0d077b, type: 3}
@@ -738,9 +738,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3979443557813217792, guid: d50c006cf353a154aaef8052e537522b, type: 3}
+      propertyPath: Speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6800095579876940567, guid: d50c006cf353a154aaef8052e537522b, type: 3}
       propertyPath: m_Name
       value: PlayerMicrobe
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637020183088174624, guid: d50c006cf353a154aaef8052e537522b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637020183088174624, guid: d50c006cf353a154aaef8052e537522b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637020183088174624, guid: d50c006cf353a154aaef8052e537522b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 7637020183088174624, guid: d50c006cf353a154aaef8052e537522b, type: 3}
       propertyPath: m_LocalPosition.x
