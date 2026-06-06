@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMicrobe
   Speed: 0.5
   RotationSpeed: 1
-  GrowMultiplier: 0.1
+  GrowMultiplier: 0.15
 --- !u!58 &4691483364022506110
 CircleCollider2D:
   m_ObjectHideFlags: 0
