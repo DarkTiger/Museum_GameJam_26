@@ -31,6 +31,9 @@ public class PlayerMicrobe : Microbe
 
     private void OnDestroy()
     {
-        GameManager.Instance.PlayerDead();
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.PlayerDead();
+        }
     }
 }
