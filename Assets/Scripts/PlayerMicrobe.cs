@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMicrobe : Microbe
 {
+    [SerializeField] AudioSource sourceSwim;
     Vector3 targetPosition = Vector3.zero;
     int borderOffset = 24;
 
@@ -25,7 +26,20 @@ public class PlayerMicrobe : Microbe
             new Vector3(transform.position.x, transform.position.y, 0f) != targetPosition)
             {
                 transform.position -= (new Vector3(transform.position.x, transform.position.y, 0f) - new Vector3(targetPosition.x, targetPosition.y, 0f)).normalized * (Speed / transform.localScale.x) * Time.deltaTime;
+            
+                if (!sourceSwim.isPlaying)
+                {
+                    sourceSwim.Play();
+                }
             }
+            else
+            {
+                sourceSwim.Stop();
+            }
+        }
+        else
+        {
+            sourceSwim.Stop();
         }
     }
 

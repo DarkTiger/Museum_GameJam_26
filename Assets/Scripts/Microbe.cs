@@ -10,6 +10,8 @@ public class Microbe : MonoBehaviour
     protected List<Microbe> MicrobesList = new List<Microbe>();
     float targetScale = 0f;
     [SerializeField] GameObject attackVFXPrefab;
+    [SerializeField] AudioSource sourceEating;
+    public AudioSource sourceAhhh;
 
 
     private void Awake()
@@ -59,6 +61,7 @@ public class Microbe : MonoBehaviour
                 MicrobesList.Remove(microbe);
                 GameManager.Instance.EnemyDestroyed(microbe);
                 Destroy(microbe.gameObject);
+                sourceEating.Play();
             }
         }
     }
