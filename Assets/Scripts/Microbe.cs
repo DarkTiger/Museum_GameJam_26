@@ -10,9 +10,11 @@ public class Microbe : MonoBehaviour
     protected List<Microbe> MicrobesList = new List<Microbe>();
     float targetScale = 0f;
 
+
     private void Awake()
     {
-        SpriteRenderer = GetComponent<SpriteRenderer>();
+        SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        SpriteRenderer.color = new Color(0f, 0f, 0f, 0f);
     }
 
     protected void Update()
@@ -21,6 +23,8 @@ public class Microbe : MonoBehaviour
         {
             transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(targetScale, targetScale, targetScale), 5f * Time.deltaTime);
         }
+
+        SpriteRenderer.color = new Color(1f, 1f, 1f, Mathf.Lerp(SpriteRenderer.color.a, 1f, 10f * Time.deltaTime));
     }
 
     protected void OnTriggerEnter2D(Collider2D collision)
