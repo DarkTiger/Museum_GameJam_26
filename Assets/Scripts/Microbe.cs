@@ -52,9 +52,9 @@ public class Microbe : MonoBehaviour
 
     protected void OnTriggerExit2D(Collider2D collision)
     {
-        //if (collision.gameObject.TryGetComponent(out Microbe microbe))
-        //{
-        //    MicrobesList.Remove(microbe);
-        //}
+        if (collision.gameObject.TryGetComponent(out Microbe microbe))
+        {
+            MicrobesList.Remove(microbe);
+        }
     }
 }
