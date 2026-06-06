@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMicrobe
   Speed: 0.35
-  RotationSpeed: 10
+  RotationSpeed: 7.5
   GrowMultiplier: 0.1
 --- !u!50 &6575809828701408578
 Rigidbody2D:

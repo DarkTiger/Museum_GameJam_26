@@ -72,11 +72,7 @@ public class GameManager : MonoBehaviour
 
     public void AddGoal()
     {
-        Debug.Log("ADD GOAL");
         currentGoal++;
-
-        Debug.Log(currentGoal + "    " + maxGoal);
-
         CanvasMenu.Instance.UpdateGoal(currentGoal, maxGoal);
 
         if (currentGoal >= maxGoal)

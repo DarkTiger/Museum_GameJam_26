@@ -1298,7 +1298,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894462528}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -1603,7 +1603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92b25e28f206ff46b404e2db186af4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameMaker
-  enemiesCount: 10
+  enemiesCount: 25
   scaleMinMax: {x: 0.15, y: 0.5}
   enemyMicrobes:
   - {fileID: 3075845360874471351, guid: 3411a12103feaab49a67f071fef44f58, type: 3}
