@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         if (gameOverObject.activeSelf || winObject.activeSelf)
         {
             if (Mouse.current.leftButton.wasPressedThisFrame || (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame))
-            {
+            {               
                 SceneManager.LoadScene("Game");
             }
         }

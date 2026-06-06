@@ -20,7 +20,7 @@ public class Background : MonoBehaviour
         if (CloudsList.Count < 5)
         {
             GameObject cloudIntantiated = Instantiate(cloudPrefab, new Vector3(Random.Range(-20, 20), Random.Range(-20, 20), 0f), Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
-            cloudIntantiated.transform.localScale = Vector3.one * Random.Range(0.25f, 1f);
+            cloudIntantiated.transform.localScale = Vector3.one * Random.Range(0.25f, 0.5f);
             CloudsList.Add(cloudIntantiated);
         }
     }
