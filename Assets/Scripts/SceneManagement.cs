@@ -24,6 +24,6 @@ public class SceneManagement : MonoBehaviour
     IEnumerator LoadGameLevelCO()
     {
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Intro");
     }
 }
