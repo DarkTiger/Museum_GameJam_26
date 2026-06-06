@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEngine.GraphicsBuffer;
 
 public class EnemyMicrobe : Microbe
 {
@@ -33,7 +31,7 @@ public class EnemyMicrobe : Microbe
                     if (nextPosition != Vector3.zero && Vector3.Distance(transform.position, nextPosition) > 0.1f)
                     {
                         direction = (nextPosition - transform.position).normalized;
-                        transform.position += (nextPosition - transform.position).normalized * Speed * Time.deltaTime;
+                        transform.position += (nextPosition - transform.position).normalized * (Speed / transform.localScale.x) * Time.deltaTime;
                     }
                     else
                     {
@@ -53,7 +51,7 @@ public class EnemyMicrobe : Microbe
             else
             {
                 direction = (transform.position - bigTarget.transform.position).normalized;
-                transform.position += (transform.position - bigTarget.transform.position).normalized * Speed * Time.deltaTime;
+                transform.position += (transform.position - bigTarget.transform.position).normalized * (Speed / transform.localScale.x) * Time.deltaTime;
                 if (Vector3.Distance(transform.position, bigTarget.transform.position) > 2.5f)
                 {
                     bigTarget = null;
@@ -63,10 +61,10 @@ public class EnemyMicrobe : Microbe
         else
         {
             direction = (target.transform.position - transform.position).normalized;
-            transform.position += (target.transform.position - transform.position).normalized * Speed * Time.deltaTime;
+            transform.position += (target.transform.position - transform.position).normalized * (Speed / transform.localScale.x) * Time.deltaTime;
         }
 
-        transform.up = Vector3.Slerp(transform.up, direction, RotationSpeed * Time.deltaTime);
+        transform.up = Vector3.Slerp(transform.up, direction, (RotationSpeed / transform.localScale.x) * Time.deltaTime);
     }
 
     private void FindNextPosition()

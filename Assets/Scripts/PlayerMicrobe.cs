@@ -24,7 +24,7 @@ public class PlayerMicrobe : Microbe
             if (targetPosition != Vector3.zero &&
             new Vector3(transform.position.x, transform.position.y, 0f) != targetPosition)
             {
-                transform.position -= (new Vector3(transform.position.x, transform.position.y, 0f) - new Vector3(targetPosition.x, targetPosition.y, 0f)).normalized * Speed * Time.deltaTime;
+                transform.position -= (new Vector3(transform.position.x, transform.position.y, 0f) - new Vector3(targetPosition.x, targetPosition.y, 0f)).normalized * (Speed / transform.localScale.x) * Time.deltaTime;
             }
         }
     }
