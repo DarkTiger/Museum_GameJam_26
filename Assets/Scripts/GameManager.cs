@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
         if (gameOverObject.activeSelf)
         {
-            if (Mouse.current.leftButton.wasPressedThisFrame)
+            if (Mouse.current.leftButton.wasPressedThisFrame || (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame))
             {
                 SceneManager.LoadScene("Game");
             }
@@ -58,6 +58,9 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDead()
     {
-        gameOverObject.SetActive(true);
+        if (gameOverObject)
+        {
+            gameOverObject.SetActive(true);
+        }  
     }
 }

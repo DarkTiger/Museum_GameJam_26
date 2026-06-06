@@ -11,9 +11,10 @@ public class PlayerMicrobe : Microbe
     {
         base.Update();
 
-        if (Mouse.current.leftButton.isPressed)
+        if (Mouse.current.leftButton.isPressed ||
+            (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed))
         {
-            Vector3 mousePos = Mouse.current.position.ReadValue();
+            Vector3 mousePos = Touchscreen.current != null? Touchscreen.current.position.ReadValue() : Mouse.current.position.ReadValue();
             if (mousePos.x - borderOffset > 0f && mousePos.x + borderOffset < Screen.width &&
                 mousePos.y - borderOffset > 0f && mousePos.y + borderOffset < Screen.height)
             {
