@@ -9,6 +9,7 @@ public class Microbe : MonoBehaviour
     protected SpriteRenderer SpriteRenderer;
     protected List<Microbe> MicrobesList = new List<Microbe>();
     float targetScale = 0f;
+    [SerializeField] GameObject attackVFXPrefab;
 
 
     private void Awake()
@@ -51,6 +52,9 @@ public class Microbe : MonoBehaviour
                     GameManager.Instance.AddGoal();
                 }
 
+                GameObject attackVFX = Instantiate(attackVFXPrefab, microbe.transform.position, Quaternion.identity);
+                attackVFX.transform.localScale = Vector3.one * 0.1f;
+                Destroy(attackVFX, 2f);
                 targetScale = transform.localScale.x + (microbe.transform.localScale.x * GrowMultiplier);
                 MicrobesList.Remove(microbe);
                 GameManager.Instance.EnemyDestroyed(microbe);

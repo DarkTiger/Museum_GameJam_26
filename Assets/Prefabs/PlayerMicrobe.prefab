@@ -173,6 +173,7 @@ MonoBehaviour:
   Speed: 0.5
   RotationSpeed: 1
   GrowMultiplier: 0.15
+  attackVFXPrefab: {fileID: 6106227317122023203, guid: 75710b224c1695d45be0e2cdd4d4ddd6, type: 3}
 --- !u!58 &4691483364022506110
 CircleCollider2D:
   m_ObjectHideFlags: 0
