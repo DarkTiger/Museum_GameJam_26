@@ -144,6 +144,7 @@ MonoBehaviour:
   Speed: 0.35
   RotationSpeed: 1
   GrowMultiplier: 0.1
+  attackVFXPrefab: {fileID: 6106227317122023203, guid: 75710b224c1695d45be0e2cdd4d4ddd6, type: 3}
 --- !u!50 &6575809828701408578
 Rigidbody2D:
   serializedVersion: 5
